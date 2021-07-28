@@ -1,0 +1,26 @@
+<button class="a" mat-raised-button color="primary" (click)="gotoHome()">Home</button>
+<button class="b" mat-raised-button color="accent" (click)="gotoAdd()">Add User</button>
+
+<button class="b" mat-flat-button color="warn" (click)="onDelet()">Delet</button>
+
+
+
+<br>
+
+<br>
+
+
+<p *ngIf="postArr.length < 1 && !isFetching">No Posts available</p>
+
+<p *ngIf="isFetching">Loading...</p>
+
+<div *ngIf="postArr.length >= 1">
+    <div *ngFor="let item of postArr">
+        <ul>
+            <li>
+                <hr> {{item.name}} :: {{item.mobile_number}}
+                <hr>
+            </li>
+        </ul>
+    </div>
+</div>

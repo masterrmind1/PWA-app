@@ -1,0 +1,38 @@
+<form #formName ngsubmit="onPost(formName.value)" class="a">
+    <label for="name">Name</label>
+    <br>
+    <input style="padding: 7px;" type="text" name="name" #name id="name" ngModel required>
+    <br>
+    <br>
+
+    <label for="mobile-number">Mob number</label>
+    <br>
+
+    <input style="padding: 7px;" type="text" id="mobile_number" ngmMdel #mobile_number name="mobile_number">
+    <br><br>
+    <label>MORE ABOUT YOU</label>
+    <br>
+    <textarea style="padding: 7px;" row="4" type="text" #about id="about" name="about" required></textarea>
+    <br>
+    <br>
+    <button type="button" mat-mini-fab color="primary" (click)="onPost({name:name.value  ,mobile_number:mobile_number.value})" [disabled]="!name.value && !mobile_number.value">save</button>
+    <br>
+    <br>
+    <br>
+    <h3 *ngIf="isFetching">Loading...</h3>
+
+</form>
+<br>
+
+<button mat-flat-button color="accent" (click)="onBack()">Back</button>
+
+<!-- <p *ngIf="postArr.length < 1">No Posts available</p>
+<div *ngIf="postArr.length >= 1">
+    <div *ngFor="let item of postArr">
+        <ul>
+            <li>
+                {{item.name}} :: {{item.mobile_number}}
+            </li>
+        </ul>
+    </div>
+</div> -->

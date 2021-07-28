@@ -8,5 +8,13 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+// platformBrowserDynamic().bootstrapModule(AppModule)
+//   .catch(err => console.error(err));
+
+
+  platformBrowserDynamic().bootstrapModule(AppModule)
+.then(() => {
+  if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('worker-basic.min.js');
+  }
+})
