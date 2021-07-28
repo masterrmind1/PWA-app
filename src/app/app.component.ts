@@ -1,3 +1,4 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component } from '@angular/core';
 import { PwaServiceService } from './pwa-service.service';
 
@@ -8,6 +9,7 @@ import { PwaServiceService } from './pwa-service.service';
 })
 export class AppComponent  {
  updateAvailable=true;
+ 
  constructor(private pwaservice:PwaServiceService){
  }
  updateMe(){
